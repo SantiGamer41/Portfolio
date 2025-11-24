@@ -1,0 +1,76 @@
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* === BODY === */
+body {
+    display: flex;
+    background: #e67a2d; /* color del mockup */
+    height: 100vh;
+}
+
+/* === BOTONES SUPERIORES === */
+.top-buttons {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.btn-page {
+    padding: 10px 28px;
+    background: #d1d1d1;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-page.active {
+    background: #ffffff;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    width: 170px;
+    background: #ffffff;
+    border-right: 1px solid #ccc;
+    padding: 30px 15px;
+}
+
+.sidebar p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.side-btn {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px;
+    background: #d1d1d1;
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* === CONTENIDO CENTRAL === */
+.vista {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 100px 40px;
+}
+
+.vista img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+}

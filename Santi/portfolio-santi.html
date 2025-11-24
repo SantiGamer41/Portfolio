@@ -1,8 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Santi</title>
-    <link rel="stylesheet" href="Santi\santistyle.css">
+    <title>Mi Perfil / Mis Proyectos</title>
+    <link rel="stylesheet" href="santistyle.css">
 </head>
+<body>
+
+    <!-- BOTONES SUPERIORES -->
+    <header class="top-buttons">
+        <button id="btnPerfil" class="btn-page active">Mi Perfil</button>
+        <button id="btnProyectos" class="btn-page">Mis Proyectos</button>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <p>Índice</p>
+        <button class="side-btn">Introducción</button>
+        <button class="side-btn">Contacto</button>
+        <button class="side-btn">Habilidades</button>
+        <button class="side-btn">Estudios</button>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL (SOLO IMAGEN) -->
+    <main class="vista">
+        <img id="imagenVista" 
+             src="Fondo principal.png" 
+             alt="Vista actual">
+    </main>
+
+    <!-- SCRIPT PARA CAMBIAR IMAGEN -->
+    <script>
+        const btnPerfil = document.getElementById("btnPerfil");
+        const btnProyectos = document.getElementById("btnProyectos");
+        const imgVista = document.getElementById("imagenVista");
+
+        btnPerfil.onclick = () => {
+            imgVista.src = "Fondo principal.png";
+            btnPerfil.classList.add("active");
+            btnProyectos.classList.remove("active");
+        };
+
+        btnProyectos.onclick = () => {
+            imgVista.src = "Fondo principal (1).png";
+            btnProyectos.classList.add("active");
+            btnPerfil.classList.remove("active");
+        };
+    </script>
+
+</body>
+</html>

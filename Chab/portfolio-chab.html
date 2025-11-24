@@ -1,79 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Chab</title>
-    <link rel="stylesheet" href="chabstyle.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="chabstyle.css">
 </head>
 <body>
-    <div class="container">
-    <header>
-    <div class="logo">Manuel Chab</div>
+  <header class="topbar">
+    <div class="brand">Manuel Chab</div>
     <nav>
-    <ul>
-    <li><a href="#portfolio">Proyectos</a></li>
-    <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#contact" class="cta">Contactame</a></li>
-    </ul>
+      <a href="#intro">Introducción</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#estudios">Estudios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
     </nav>
-    </header>
-    
-    
-    <main>
-    <section class="hero">
-    <div class="hero-text">
-    <h1>Diseño, código y producto</h1>
-    <p>Creo interfaces accesibles y performantes. Trabajo con equipos para transformar ideas en productos digitales que la gente disfruta usar.</p>
-    <div class="buttons">
-    <a href="#contact" class="btn primary">Ver CV</a>
-    <a href="#projects" class="btn">Ver proyectos</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-foto">
+        <img src="Ellipse 1.png" alt="">
     </div>
+    <h1>Manuel Chab</h1>
+    <p class="rol">Diseñador / UX-UI</p>
+    <button class="btn">Trabajemos juntos</button>
+  </section>
+
+  <section id="intro" class="bloque">
+    <h2>Introducción</h2>
+    <div class="intro-grid">
+      <div class="intro-box">Soy un estudiante apasionado por el diseño UX/UI y modelado 3D. Obsesionado con los detalles y las buenas prácticas, trabajo arduamente para crear experiencias agradables a base de diseños personalizados para cada cliente. 
+Me aseguro profundamente de proporcionar un trabajo ideado y ejecutado en base a las necesitades y deseos de cada uno que confie en mis servicios.
+</div>
+      <div class="intro-box">foto</div>
     </div>
-    
-    
-    <aside class="profile">
-    <div class="avatar">CC</div>
-    <div class="info">
-    <h3>Chabner Chabson</h3>
-    <p>Full-stack & UI Engineer</p>
-    <small>Buenos Aires · Disponible para proyectos remotos</small>
+    <button class="btn">Descargar CV</button>
+  </section>
+
+  <section id="habilidades" class="bloque">
+    <h2>Habilidades</h2>
+    <div class="skills">
+        <img src="Group 225.png" alt="">
     </div>
-    </aside>
-    </section>
-    
-    
-    <section id="portfolio">
-    <h2>Proyectos destacados</h2>
-    <div class="projects">
-    <div class="project">
-    <h4>Proyecto A</h4>
-    <p>Aplicación web para gestión de tareas con notificaciones en tiempo real.</p>
+  </section>
+
+  <section id="estudios" class="bloque">
+    <h2>Estudios</h2>
+    <div class="estudio">
+      <div class="punto"></div>
+      <div class="etiqueta">Instituto Tecnológico de Buenos Aires (ITBA)<br><small>Universidad</small></div>
+      <div class="fecha">2026 -</div>
     </div>
-    <div class="project">
-    <h4>Proyecto B</h4>
-    <p>Landing responsive con animaciones y performance optimizada.</p>
+    <div class="estudio">
+      <div class="punto"></div>
+      <div class="etiqueta">Escuela Técnica ORT<br><small>Secundario</small></div>
+      <div class="fecha">2021 - 2025</div>
     </div>
-    <div class="project">
-    <h4>Proyecto C</h4>
-    <p>Dashboard analítico con visualizaciones y filtros avanzados.</p>
+  </section>
+
+  <section id="proyectos" class="bloque">
+    <h2>Proyectos</h2>
+    <div class="proyectos-grid">
+      <div class="proyecto">
+        <div class="proyecto-foto">
+            <img src="fotocv.png" alt="pepe">
+        </div>
+      </div>
+      <div class="proyecto">
+        <div class="proyecto-foto">
+            <img src="fotovolleytactics.png" alt="pepe">
+        </div>
+      </div>
+      <div class="proyecto">
+        <div class="proyecto-foto">
+            <img src="fototrucort.png" alt="pepe">
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section id="contacto" class="bloque">
+    <h2>¿Tienes un proyecto en mente?</h2>
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        Me encantaría conocer sobre tu proyecto y como puedo ayudarte a llevarlo al siguiente nivel.Trabajemos juntos para crear algo extraordinario.<br><br>
+        <img src="Group 226.png" alt="">
+      </div>
+      <form class="contacto-form">
+        <label>Nombre</label>
+        <input type="text">
+        <label>Email</label>
+        <input type="email">
+        <label>Mensaje</label>
+        <textarea></textarea>
+        <button class="btn">Enviar Mensaje</button>
+      </form>
     </div>
-    </section>
-    
-    
-    <section id="about">
-    <h2>Sobre mí</h2>
-    <div class="about-card">
-    <p>Soy desarrollador con experiencia en front-end, diseño de interfaces y colaboración con equipos de producto. Me interesa la usabilidad, la accesibilidad y el rendimiento.</p>
-    </div>
-    </section>
-    </main>
-    
-    
-    <footer>
-    <p>© 2025 Chabner Chabson</p>
-    <p>Diseño inspirado en la maqueta — HTML & CSS listo</p>
-    </footer>
-    </div>
-    </body>
+  </section>
+</body>
+</html>
