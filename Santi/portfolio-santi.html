@@ -10,25 +10,27 @@
 
     <!-- BOTONES SUPERIORES -->
     <header class="top-buttons">
-        <button id="btnPerfil" class="btn-page active">Mi Perfil</button>
-        <button id="btnProyectos" class="btn-page">Mis Proyectos</button>
+        <button id="btnPerfil" class="btn-page active">
+            <img src="Pestaña mi perfil activa.png" class="btn-icon" />
+        </button>
+        <button id="btnProyectos" class="btn-page">
+            <img src="Pestaña mis proyectos inactiva.png" class="btn-icon" />
+        </button>
     </header>
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-        <p>Índice</p>
-        <button class="side-btn">Introducción</button>
-        <button class="side-btn">Contacto</button>
-        <button class="side-btn">Habilidades</button>
-        <button class="side-btn">Estudios</button>
+        <button class="side-btn">
+            <img src="Indice.png" class="btn-icon" />
+        </button>
     </aside>
 
     <!-- CONTENIDO PRINCIPAL (SOLO IMAGEN) -->
-    <main class="vista">
-        <img id="imagenVista" 
-             src="Fondo principal.png" 
-             alt="Vista actual">
-    </main>
+    <div class="code-wrapper">
+        <main class="vista">
+            <img id="imagenVista" src="Fondo principal.png" alt="Vista actual">
+        </main>
+    </div>
 
     <!-- SCRIPT PARA CAMBIAR IMAGEN -->
     <script>
@@ -37,13 +39,13 @@
         const imgVista = document.getElementById("imagenVista");
 
         btnPerfil.onclick = () => {
-            imgVista.src = "Fondo principal.png";
+            imgVista.src = "Mi perfil.png";
             btnPerfil.classList.add("active");
             btnProyectos.classList.remove("active");
         };
 
         btnProyectos.onclick = () => {
-            imgVista.src = "Fondo principal (1).png";
+            imgVista.src = "Mis proyectos.png";
             btnProyectos.classList.add("active");
             btnPerfil.classList.remove("active");
         };

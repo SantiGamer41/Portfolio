@@ -6,43 +6,97 @@
     font-family: Arial, sans-serif;
 }
 
+.code-container {
+    width: 100%;
+    height: 100vh;      /* ocupa toda la altura visible */
+    overflow-y: scroll; /* permite scrolleo vertical */
+    overflow-x: hidden; /* opcional, evita scroll horizontal */
+}
+.code-wrapper {
+    position: fixed;
+    top: 0;
+    left: 230px;        /* ancho de la sidebar */
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;   /* permite scroll vertical */
+    overflow-x: hidden; /* recorta lo que sobresale a la derecha */
+    background-color: #1e1e1e;
+}
+
+/* altura de la cabecera para cálculos */
+:root {
+    --header-height: 76px; /* ajusta si cambias tamaño de botones */
+}
+
 /* === BODY === */
 body {
     display: flex;
-    background: #e67a2d; /* color del mockup */
-    height: 100vh;
+    background: #181818; /* color del mockup */
+    /* NO usar height:100vh aquí -> permite scroll */
+    min-height: 100vh;
 }
 
 /* === BOTONES SUPERIORES === */
 .top-buttons {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 230px; /* el ancho de tu sidebar */
+    height: 52px; 
     display: flex;
-    gap: 20px;
-    z-index: 100;
+    gap: 6px;
+    align-items: center;
+    padding-left: 12px;
+    background: #1e1e1e;  /* mismo color que el panel para que parezca parte del editor */
+    z-index: 2000;
+    border-bottom: 1px solid #2a2a2a; /* opcional, estilo VSCode */
 }
 
 .btn-page {
-    padding: 10px 28px;
-    background: #d1d1d1;
+    background: none;
     border: none;
-    border-radius: 10px;
+    padding: 0;
     cursor: pointer;
-    font-size: 14px;
 }
 
-.btn-page.active {
-    background: #ffffff;
+.btn-page img {
+    width: auto;
+    height: 48px;      /* tu tamaño deseado */
+    display: block;
+    background: none;
+    border-radius: 6px; /* opcional */
+    overflow: hidden;
+    clip-path: inset(3% 3% 3% 3%); /* recorta el borde blanco */
 }
+
+.btn-icon {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.4));
+    background: none;    /* fuerza que no haya fondo */
+}
+
 
 /* === SIDEBAR === */
 .sidebar {
     width: 170px;
-    background: #ffffff;
-    border-right: 1px solid #ccc;
+    background: #181818;
+    border-right: 1px solid #181818;
     padding: 30px 15px;
+    position: fixed;     /* fijo a la izquierda para que no se mueva */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+.sidebar .side-btn img {
+    width: 120px;          /* antes ocupaba el 100% → lo achicamos */
+    height: auto;          /* mantiene proporción → NO se estira */
+    display: block;
+    margin: 0 auto;        /* centrado */
+    object-fit: contain;   /* evita estiramientos raros */
 }
 
 .sidebar p {
@@ -51,26 +105,54 @@ body {
 }
 
 .side-btn {
-    width: 100%;
-    margin-bottom: 12px;
-    padding: 8px;
-    background: #d1d1d1;
+    background: none;
     border: none;
-    border-radius: 10px;
-    text-align: left;
+    padding: 0;
+    margin-bottom: 14px;
     cursor: pointer;
 }
 
+.side-btn img {
+    width: 150px; /* ajústalo al tamaño real de tus iconos */
+    height: auto;
+    display: block;
+}
+
 /* === CONTENIDO CENTRAL === */
+/* Nota: dejamos espacio a la izquierda para el sidebar (width + border) */
 .vista {
-    flex: 1;
+    width: 100%;
+    height: auto;           /* importante: NO limitar la altura */
+    overflow-y: scroll;      /* activa scroll vertical */
+    padding: 120px 0 40px;  /* evita que quede bajo la barra superior */
     display: flex;
     justify-content: center;
-    padding: 100px 40px;
 }
 
 .vista img {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 10px;
+    width: 100%;            /* ocupa todo el ancho de la pantalla */
+    height: auto;           /* mantiene proporción y NO se aplasta */
+    display: block;
 }
+
+/* panel oscuro similar al mockup (envoltorio del image) */
+.vista .content-box {
+    width: calc(100% - 230px);
+    max-width: 1200px;      /* máximo ancho del panel; cambia o quítalo si querés ocupar TODO */
+    background: #222325;
+    border-radius: 12px;
+    padding: 36px;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.08);
+    display: block;
+    overflow: visible;
+}
+
+/* si usás <img> dentro, que ocupe todo el ancho del content-box */
+.vista .content-box img {
+    display: block;
+    width: 100%;        /* usa todo el ancho disponible del content-box */
+    height: auto;       /* respeta proporción */
+    border-radius: 8px;
+}
+
+/* Si preferís que el panel ocupe TODO el ancho disponible sin límite, pon max-width: none en .content-box */
